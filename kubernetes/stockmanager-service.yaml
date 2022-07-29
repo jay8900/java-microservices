@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: stockmanager
-        image: jay8900/jay3
+        image: jay8900/jay3:latest
         ports:
         - containerPort: 8030
         livenessProbe:

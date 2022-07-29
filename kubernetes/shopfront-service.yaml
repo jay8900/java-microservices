@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: djshopfront
-        image: jay8900/jay1
+        image: jay8900/jay1:latest
         ports:
         - containerPort: 8010
         livenessProbe:
