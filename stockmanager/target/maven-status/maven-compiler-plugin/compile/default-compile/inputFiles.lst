@@ -1,0 +1,7 @@
+/home/ubuntu/java-microservices/stockmanager/src/main/java/uk/co/danielbryant/djshopping/stockmanager/StockManagerApplication.java
+/home/ubuntu/java-microservices/stockmanager/src/main/java/uk/co/danielbryant/djshopping/stockmanager/services/StockService.java
+/home/ubuntu/java-microservices/stockmanager/src/main/java/uk/co/danielbryant/djshopping/stockmanager/repositories/StockRepository.java
+/home/ubuntu/java-microservices/stockmanager/src/main/java/uk/co/danielbryant/djshopping/stockmanager/config/DataGenerator.java
+/home/ubuntu/java-microservices/stockmanager/src/main/java/uk/co/danielbryant/djshopping/stockmanager/exceptions/StockNotFoundException.java
+/home/ubuntu/java-microservices/stockmanager/src/main/java/uk/co/danielbryant/djshopping/stockmanager/resources/StockResource.java
+/home/ubuntu/java-microservices/stockmanager/src/main/java/uk/co/danielbryant/djshopping/stockmanager/model/Stock.java
