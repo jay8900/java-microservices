@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: productcatalogue
-        image: jay8900/jay:2
+        image: jay8900/jay2
         ports:
         - containerPort: 8020
         livenessProbe:
