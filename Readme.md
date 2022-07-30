@@ -299,6 +299,10 @@ monitoring    loki-promtail   1         1         1       1            1        
   
   <img width="1738" alt="image" src="https://user-images.githubusercontent.com/90141704/181888193-1435056c-ac5a-463f-8a77-34cd96540181.png">
 
+  
+  
+  <img width="1725" alt="image" src="https://user-images.githubusercontent.com/90141704/181888652-f3276bcc-f01e-42dd-b8c6-2e55f50fb054.png">
+
 
   
   
