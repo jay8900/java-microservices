@@ -197,18 +197,30 @@ We need to head to Configuration > Datasources and add a new Prometheus instance
 What Is Loki?
 Loki is a horizontally-scalable, highly-available, multi-tenant log aggregation system inspired by Prometheus. It is designed to be very cost effective and easy to operate. It does not index the contents of the logs, but rather a set of labels for each log stream.
 
+
+
+
 **Install Loki on Minikube
 Add Helm Repo for Loki**
+
+
+
 
 $ helm repo add loki https://grafana.github.io/loki/charts
 
 "loki" has been added to your repositories
+
+
+
 
 Then, update the repos.
 
 $ helm repo update
 
 Before installing Loki, let’s have a check for the correct repo of it.
+
+
+
 
 
 $ helm search repo loki
@@ -242,6 +254,10 @@ loki/promtail            2.0.2         v2.0.0      DEPRECATED Responsible for ga
 grafana/fluent-bit       2.3.0         v2.1.0      Uses fluent-bit Loki go plugin for gathering lo...
 
 grafana/promtail         3.5.1         2.2.1       Promtail is an agent which ships the contents o...
+
+
+
+
 
 
 
