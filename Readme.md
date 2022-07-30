@@ -66,4 +66,85 @@ Check the configuration which is stored in a config map, kubectl describe config
 
 **Deploying Java based RESTFUL application **
 
+git clone https://github.com/jay8900/java-microservices.git
+
+cd java-microservices/java-app1
+
+mvn clean install 
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 17.210 s
+[INFO] Finished at: 2017-09-30T11:28:37+01:00
+[INFO] Final Memory: 41M/328M
+[INFO] ------------------------------------------------------------------------
+
+docker build -t jay8900/jay1:latest .
+
+
+docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username:
+Password:
+Login Succeeded
+
+
+docker push jay8900/jay1:latest
+
+
+**Building the remaining applications**
+
+$ cd ..
+
+$ cd java-app2/
+
+$ mvn clean install
+
+…
+$ docker build -t jay8900/jay2:latest  .
+...
+$ docker push jay8900/jay2:latest 
+...
+
+$ cd ..
+
+$ cd java-app3/
+
+$ mvn clean install
+
+...
+
+$ docker build -t jay8900/jay3:latest .
+...
+
+
+$ docker push jay8900/jay3:latest
+…
+
+
+
+**Deploying onto Kubernetes**
+
+
+**Deploying the entire Java application in Kubernetes**
+
+cd ../kubernetes
+
+kubectl apply -f *.yaml
+
+
+Viewing the complete application
+
+
+minikube service shopfront
+
+
+
+
+
+
+
+
+
 
