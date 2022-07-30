@@ -84,7 +84,9 @@ docker build -t jay8900/jay1:latest .
 
 
 docker login
+
 Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+
 Username:
 Password:
 Login Succeeded
@@ -134,7 +136,7 @@ cd ../kubernetes
 kubectl apply -f *.yaml
 
 
-Viewing the complete application
+# Viewing the complete application
 
 
 minikube service shopfront
