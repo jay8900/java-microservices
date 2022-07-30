@@ -281,6 +281,36 @@ monitoring    loki-promtail   1         1         1       1            1        
   
 
 
+<img width="1499" alt="image" src="https://user-images.githubusercontent.com/90141704/181879514-c9ef8af0-514e-42be-afb1-1b4fcd68459f.png">
+
+  
+  
+  
+  <img width="1599" alt="image" src="https://user-images.githubusercontent.com/90141704/181879530-4f97e4fa-ebe9-4d1a-bba0-f7f420a6efbe.png">
+  
+  
+  
+  <img width="1792" alt="image" src="https://user-images.githubusercontent.com/90141704/181879707-37a32932-3ceb-44f1-917e-ac48c200874c.png">
+
+
+  
+  
+  
+**  Install Tempo On kuberntes:**
+  
+ # helm install my-tempo \
+  --set tempo.traces.jaeger.grpc=true \
+  bitnami/grafana-tempo
+  
+  
+#  kubectl expose service my-tempo-grafana-tempo-query-frontend --type=NodePort --target-port=3100 --name=my-tempo-grafana-tempo-query-frontend1
+  
+  
+  <img width="1236" alt="image" src="https://user-images.githubusercontent.com/90141704/181879618-ada0986a-9f9a-4dbb-864a-dd2158fa57a6.png">
+
+  
+  
+  
 
 
 
