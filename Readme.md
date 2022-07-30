@@ -1,6 +1,6 @@
 
 
-#**Minimum system requirements for minikube:**
+#Minimum system requirements for minikube:
 
 
 2 GB RAM or more
