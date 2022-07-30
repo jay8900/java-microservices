@@ -150,7 +150,7 @@ minikube service shopfront
 Minikube
 helm
 
-Install Prometheus
+**Install Prometheus**
 
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 
@@ -172,6 +172,10 @@ kubectl expose service grafana --type=NodePort --target-port=3000 --name=grafana
 kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 
 minikube service grafana-np
+
+
+<img width="1679" alt="image" src="https://user-images.githubusercontent.com/90141704/181879253-d08f2e44-3d4a-4d8a-85d1-341132f52c0d.png">
+
 
 
 
