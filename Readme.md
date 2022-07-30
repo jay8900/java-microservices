@@ -1,6 +1,6 @@
 
 
-#Minimum system requirements for minikube:
+# Minimum system requirements for minikube:
 
 
 2 GB RAM or more
@@ -64,7 +64,7 @@ It will prompt for the IP Address range. As my minikube host IP is 192.168.99.10
 Check the configuration which is stored in a config map, kubectl describe configmap config -n metallb-system
 
 
-**Deploying Java based RESTFUL application **
+# Deploying Java based RESTFUL application 
 
 git clone https://github.com/jay8900/java-microservices.git
 
@@ -142,7 +142,7 @@ minikube service shopfront
 
 
 
-**Prometheus and Grafana setup in Minikube**
+# Prometheus and Grafana setup in Minikube
 
 
 **Requirements**
@@ -150,7 +150,7 @@ minikube service shopfront
 Minikube
 helm
 
-**Install Prometheus**
+# Install Prometheus
 
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 
@@ -162,7 +162,7 @@ kubectl expose service prometheus-server --type=NodePort --target-port=9090 --na
 minikube service prometheus-server-np
 
 
-**Install Grafana**
+# Install Grafana
 
 helm repo add grafana https://grafana.github.io/helm-charts
 
@@ -188,12 +188,11 @@ We need to head to Configuration > Datasources and add a new Prometheus instance
 
 
 
-**Setup Grafana/Loki on Local K8s Cluster — Minikube**
+# Setup Grafana/Loki on Local K8s Cluster — Minikube
 
 
 What Is Loki?
 Loki is a horizontally-scalable, highly-available, multi-tenant log aggregation system inspired by Prometheus. It is designed to be very cost effective and easy to operate. It does not index the contents of the logs, but rather a set of labels for each log stream.
-
 
 **Install Loki on Minikube
 Add Helm Repo for Loki**
@@ -303,8 +302,8 @@ monitoring    loki-promtail   1         1         1       1            1        
   --set tempo.traces.jaeger.grpc=true \
   bitnami/grafana-tempo**
   
+  **kubectl expose service my-tempo-grafana-tempo-query-frontend --type=NodePort --target-port=3100 --name=my-tempo-grafana-tempo-query-frontend1**
   
-#  kubectl expose service my-tempo-grafana-tempo-query-frontend --type=NodePort --target-port=3100 --name=my-tempo-grafana-tempo-query-frontend1
   
   
   <img width="1236" alt="image" src="https://user-images.githubusercontent.com/90141704/181879618-ada0986a-9f9a-4dbb-864a-dd2158fa57a6.png">
