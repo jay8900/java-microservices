@@ -142,6 +142,7 @@ kubectl apply -f *.yaml
 minikube service shopfront
 
 
+<img width="881" alt="image" src="https://user-images.githubusercontent.com/90141704/181884333-1ae94553-5088-4956-9709-f11baf65900c.png">
 
 
 # Prometheus and Grafana setup in Minikube
