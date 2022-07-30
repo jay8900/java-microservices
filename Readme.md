@@ -300,7 +300,7 @@ monitoring    loki-promtail   1         1         1       1            1        
   
  # helm install my-tempo \
   --set tempo.traces.jaeger.grpc=true \
-  bitnami/grafana-tempo
+  bitnami/grafana-tempo**
   
   
 #  kubectl expose service my-tempo-grafana-tempo-query-frontend --type=NodePort --target-port=3100 --name=my-tempo-grafana-tempo-query-frontend1
