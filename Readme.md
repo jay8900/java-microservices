@@ -174,12 +174,111 @@ kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-passwor
 minikube service grafana-np
 
 
+Configure Prometheus Datasource
+Once we’re logged in to the admin interface, it’s time to configure the Prometheus Datasource.
+
+We need to head to Configuration > Datasources and add a new Prometheus instance.
+
+
+
+
 <img width="1679" alt="image" src="https://user-images.githubusercontent.com/90141704/181879253-d08f2e44-3d4a-4d8a-85d1-341132f52c0d.png">
 
 
 
 
 
+**Setup Grafana/Loki on Local K8s Cluster — Minikube**
+
+
+What Is Loki?
+Loki is a horizontally-scalable, highly-available, multi-tenant log aggregation system inspired by Prometheus. It is designed to be very cost effective and easy to operate. It does not index the contents of the logs, but rather a set of labels for each log stream.
+
+
+**Install Loki on Minikube
+Add Helm Repo for Loki**
+
+$ helm repo add loki https://grafana.github.io/loki/charts
+
+"loki" has been added to your repositories
+
+Then, update the repos.
+
+$ helm repo update
+
+Before installing Loki, let’s have a check for the correct repo of it.
+
+
+$ helm search repo loki
+
+
+NAME                     CHART VERSION APP VERSION DESCRIPTION
+
+
+grafana/loki             2.5.0         v2.2.0      Loki: like Prometheus, but for logs.
+
+
+grafana/loki-canary      0.3.0         2.2.0       Helm chart for Grafana Loki Canary
+
+
+grafana/loki-distributed 0.31.3        2.2.1       Helm chart for Grafana Loki in microservices mode
+
+
+grafana/loki-stack       2.4.1         v2.1.0      Loki: like Prometheus, but for logs.
+
+
+loki/loki                2.1.1         v2.0.0      DEPRECATED Loki: like Prometheus, but for logs.
+
+
+loki/loki-stack          2.1.2         v2.0.0      DEPRECATED Loki: like Prometheus, but for logs.
+
+
+loki/fluent-bit          2.0.2         v2.0.0      DEPRECATED Uses fluent-bit Loki go plugin for g...
+
+loki/promtail            2.0.2         v2.0.0      DEPRECATED Responsible for gathering logs and s...
+
+grafana/fluent-bit       2.3.0         v2.1.0      Uses fluent-bit Loki go plugin for gathering lo...
+
+grafana/promtail         3.5.1         2.2.1       Promtail is an agent which ships the contents o...
+
+
+
+
+**Install Loki**
+I created a dedicated namespace monitoring in the Minikube cluster for Loki and Grafana.
+
+
+$ kubectl create namespace monitoring
+namespace/monitoring created
+
+
+$ helm upgrade --install loki --namespace=monitoring grafana/loki-stack
+
+Release "loki" does not exist. Installing it now.
+NAME: loki
+LAST DEPLOYED: Mon May 31 22:13:19 2021
+NAMESPACE: monitoring
+STATUS: deployed
+REVISION: 1
+NOTES:
+The Loki stack has been deployed to your cluster. Loki can now be added as a datasource in Grafana.
+
+
+**Verify Loki Installed**
+Loki is installed as a StatefulSet and it could be checked as:
+
+$ kubectl get statefulset -A
+NAMESPACE    NAME   READY   AGE
+monitoring   loki   1/1     49m
+
+
+While, loki-promtail is a DaemonSet:
+
+$ kubectl get daemonset -A
+NAMESPACE     NAME            DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+monitoring    loki-promtail   1         1         1       1            1           <none>                   49m
+  
+  
 
 
 
