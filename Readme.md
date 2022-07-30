@@ -298,7 +298,8 @@ monitoring    loki-promtail   1         1         1       1            1        
   
 **  Install Tempo On kuberntes:**
   
- # helm install my-tempo \
+ # 
+  **helm install my-tempo \
   --set tempo.traces.jaeger.grpc=true \
   bitnami/grafana-tempo**
   
