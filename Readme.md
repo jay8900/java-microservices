@@ -1,4 +1,8 @@
+
+
 Minimum system requirements for minikube:
+
+
 2 GB RAM or more
 2 CPU / vCPU or more
 20 GB free hard disk space or more
@@ -58,3 +62,8 @@ As we have enabled the addon, now we have to configure the same for the addon to
 It will prompt for the IP Address range. As my minikube host IP is 192.168.99.100, I have given the range as below
 
 Check the configuration which is stored in a config map, kubectl describe configmap config -n metallb-system
+
+
+**Deploying Java based RESTFUL application **
+
+
